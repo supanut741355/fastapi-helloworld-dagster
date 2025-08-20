@@ -5,11 +5,11 @@ FROM python:3.11-slim
 WORKDIR /app/dagster
 
 # Copy dependencies
-COPY requirements.txt .
+COPY . .
 
 # Install dependencies
 RUN \
-  pip install --no-cache-dir -r requirements.txt dagster dagster-k8s
+  pip install --no-cache-dir -r requirements.txt dagster dagster-k8s dagster-postgres
 
 
 # Copy the application
